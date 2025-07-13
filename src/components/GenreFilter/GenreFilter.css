@@ -1,0 +1,19 @@
+.genre-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+.genre-button {
+  padding: 0.4rem 1rem;
+  background-color: #333;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.genre-button.active,
+.genre-button:hover {
+  background-color: #e50914;
+}

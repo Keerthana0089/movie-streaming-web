@@ -1,0 +1,63 @@
+.favorites-page {
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.favorites-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.favorites-header h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.clear-btn {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background-color: #f12630;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #c90711;
+}
+
+.favorites-count {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.empty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.empty {
+  color: #ccc;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 2rem;
+}

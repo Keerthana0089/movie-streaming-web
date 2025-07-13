@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* === Overall Container === */
+.movie-details {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* === Backdrop Slider === */
+.backdrop-carousel {
+  margin-bottom: -80px;
+}
+
+.backdrop-slide {
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+
+.backdrop-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.2) 20%, transparent);
+  z-index: 1;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--accent);
+}
+
+/* === Details Section === */
+.details-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: -100px;
+  z-index: 1;
+  position: relative;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.text-section {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.text-section h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+               0 0 20px rgba(19, 17, 17, 0.4);
+}
+
+.tagline {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.text-section p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* === Favorite Button === */
+.fav-btn {
+  margin-top: 1.5rem;
+  background-color: #e50914;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.fav-btn:hover {
+  background-color: #b00610;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+.fav-btn.favorited {
+  background-color: #444;
+  color: #e50914;
+}
+
+/* === Recommendations Section === */
+.recommend-section {
+  margin: 3rem 2rem;
+}
+
+.recommend-section h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.recommend-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommend-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* === Trailer Section === */
+
+.trailer-container {
+  margin: 4rem auto;
+  max-width: 960px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(to bottom right, #111, #1c1c1c);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.trailer-overlay {
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trailer-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.trailer-video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.15), 0 0 15px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.trailer-video-wrapper:hover {
+  transform: scale(1.01);
+}
+
+.trailer-video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
