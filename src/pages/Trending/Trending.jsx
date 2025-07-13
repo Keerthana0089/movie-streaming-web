@@ -7,7 +7,7 @@ import {
 } from "../../api/movieApi";
 import Spinner from "../../components/Spinner/Spinner";
 import { Link } from "react-router-dom";
-import "./trending.css";
+import "./Trending.css";
 import { FaFire, FaStar, FaFilm } from "react-icons/fa";
 
 const TABS = {
